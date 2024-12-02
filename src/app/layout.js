@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import { DeviceSelection } from "./components/device-selection";
 const inter = Inter({
   subsets: ["latin"], 
   variable: "--font-inter",
@@ -11,16 +11,20 @@ export const metadata = {
   title: "Cardio Disease Map",
   description: "",
   icons: {
-    icon: "..//favicon.ico", // Path to your favicon in the public folder
+    icon: "..//favicon.ico",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
+    
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
-        {children}
+        <DeviceSelection>
+            {children}
+        </DeviceSelection>
       </body>
     </html>
+    
   );
 }
