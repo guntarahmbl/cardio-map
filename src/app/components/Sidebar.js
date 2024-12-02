@@ -21,16 +21,7 @@ export default function SideBar({ filters, selectedProvince }) {
                 }
             </p>
         </div>
-        <div className="w-full flex flex-col justify-center" id="saranIntervensi">
-            <h1 className="text-white text-xl">Saran Intervensi {filters} {selectedProvince ? "di "+selectedProvince: ""}</h1>
-        <p className="text-sm text-justify min-h-52">
-            {
-                saranIntervensi[selectedProvince] && saranIntervensi[selectedProvince][filters]
-                ? saranIntervensi[selectedProvince][filters]
-                : "-"
-            }
-        </p>
-        </div>
+
     </div>
   );
 }

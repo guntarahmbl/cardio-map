@@ -1,5 +1,9 @@
 export const pengertian = {
-
+    'Penyakit Jantung Koroner':`Penyakit Jantung Koroner (PJK) adalah kondisi patologis yang terjadi akibat penyempitan atau penyumbatan arteri koroner yang menghambat aliran darah ke otot jantung (miokardium). Penyempitan ini umumnya disebabkan oleh aterosklerosis, yaitu penumpukan plak yang terdiri dari kolesterol, lemak, dan zat lainnya di dinding arteri. PJK dapat menyebabkan angina pektoris (nyeri dada), sesak napas, dan komplikasi serius seperti infark miokard (serangan jantung) dan gagal jantung.
+    Gejala Umum yang Harus Diwaspadai:
+    Nyeri dada atau rasa tertekan di dada, yang mungkin menjalar ke lengan, leher, atau rahang.
+    Sesak napas, terutama saat beraktivitas.
+    Kelelahan atau pusing tanpa sebab yang jelas.​`
 }
 
 export const faktorRisiko = {
