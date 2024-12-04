@@ -32,6 +32,43 @@ export const faktorRisiko = {
     'Bekasi':{
         'Penyakit Jantung Koroner': `Polusi Udara: Urbanisasi pesat menyebabkan tingginya paparan polusi, yang juga berdampak pada kesehatan kardiovaskular.
         Merokok dan Obesitas: Faktor yang sering ditemukan akibat tingginya tingkat stres dan pola makan tidak sehat`
+    },
+    'Sumatera Barat':{
+        'Penyakit Jantung Koroner': `Konsumsi Makanan Tinggi Lemak dan Santan, kebiasaan
+         merokok, Obesitas Sentral, stress sosial ekonomi`
+    },
+    'Kalimantan Timur':{
+        'Penyakit Jantung Koroner': `Polusi Udara dari Aktivitas Industri dan Pertambangan,
+         merokok, Obesitas dan Diabetes Mellitus`
+    },
+    'Sumatera Selatan':{
+        'Penyakit Jantung Koroner': `Konsumsi Makanan Tinggi Lemak dan Garam, kurangnya 
+        aktivitas fisik, hipertensi`
+    },
+    'Jawa Timur':{
+        'Penyakit Jantung Koroner': `"Merokok
+        Pola makan tidak sehat
+        Kurang aktivitas fisik`
+    },
+    'Banten':{
+        'Penyakit Jantung Koroner': `Polusi udara (khususnya di kawasan industri Tangerang 
+            dan Cilegon), Urbanisasi dan Gaya Hidup Tidak Sehat, merokok, Keterbatasan Akses Layanan Kesehatan di Daerah Terpencil`
+    },
+    'Jawa Tengah':{
+        'Penyakit Jantung Koroner': `Konsumsi Makanan Tinggi Garam dan Lemak, Kurangnya 
+        Aktivitas Fisik di Kalangan Petani, Tingginya Prevalensi Merokok`
+    },
+    'Sulawesi Selatan':{
+        'Penyakit Jantung Koroner': `Konsumsi Makanan Tinggi Lemak dan Karbohidrat, 
+        Obesitas dan Kurang Aktivitas Fisik, komorbiditas`
+    },
+    'Aceh':{
+        'Penyakit Jantung Koroner': `Konsumsi Makanan Tinggi Lemak dan Santan, hipertensi 
+        diabetes, merokok, Pengaruh Sosial Ekonomi dan Pendidikan`
+    },
+    'Kalimantan Tengah':{
+        'Penyakit Jantung Koroner': `polusi Udara Lokal, merokok, Pola Makan Tradisional 
+        Tinggi Lemak dan Karbohidrat, Keterbatasan Akses Layanan Kesehatan`
     }
 
 }
