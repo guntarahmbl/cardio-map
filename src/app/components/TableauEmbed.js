@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from 'react';
 
-export default function TableauEmbed({ tableauVizUrl, onFiltersChange, onProvinceSelected }) {
+export default function TableauEmbed({ tableauVizUrl, onFiltersChange, onProvinceSelected, onCountySelected }) {
     useEffect(() => {
         const scriptId = 'tableau-api';
         if (!document.getElementById(scriptId)) {
@@ -21,16 +21,18 @@ export default function TableauEmbed({ tableauVizUrl, onFiltersChange, onProvinc
                     const workbook = await viz.workbook;
                     const activeSheet = await workbook.activeSheet;
                     const worksheets = await activeSheet.worksheets;
-                    const worksheet = worksheets[1];
+                    const worksheetProvince = worksheets[0];
+                    const worksheetCounty = worksheets[1];
 
                     // Add event listener for mark selection changes
                     viz.addEventListener('markselectionchanged', async () => {
                         try {
-                            const selectedMarks = await worksheet.getSelectedMarksAsync();
-                            console.log('Selected Marks:', selectedMarks);
+                            //province mark
+                            const selectedMarksProvince = await worksheetProvince.getSelectedMarksAsync();                            
+                            console.log('Selected Marks:', selectedMarksProvince);
 
-                            if (selectedMarks && selectedMarks.data && selectedMarks.data.length > 0) {
-                                selectedMarks.data.forEach((rowData, rowIndex) => {
+                            if (selectedMarksProvince && selectedMarksProvince.data && selectedMarksProvince.data.length > 0) {
+                                selectedMarksProvince.data.forEach((rowData, rowIndex) => {
                                     console.log(`Row ${rowIndex} Data:`, rowData);
                                     
                                     // Ensure rowData._data exists and has the expected structure
@@ -53,6 +55,36 @@ export default function TableauEmbed({ tableauVizUrl, onFiltersChange, onProvinc
                                 console.log('No marks selected');
                                 onProvinceSelected(null);
                             }
+
+                            //County mark
+                            const selectedMarksCounty = await worksheetCounty.getSelectedMarksAsync();                            
+                            console.log('Selected Marks:', selectedMarksCounty);
+
+                            if (selectedMarksCounty && selectedMarksCounty.data && selectedMarksCounty.data.length > 0) {
+                                selectedMarksCounty.data.forEach((rowData, rowIndex) => {
+                                    console.log(`Row ${rowIndex} Data:`, rowData);
+                                    
+                                    // Ensure rowData._data exists and has the expected structure
+                                    if (rowData._data && rowData._data[0] && rowData._data[0][1]) {
+                                        const CountyObj = rowData._data[0][1];
+                                        console.log("CountyObj: ", CountyObj);
+                                        if (CountyObj && CountyObj._value) {
+                                            const CountyName = CountyObj._value;
+                                            console.log(`Selected County: ${CountyName}`);
+                                            onCountySelected(CountyName);
+                                        } else {
+                                            console.log('No _value found for County');
+                                        }
+                                    } else {
+                                        console.log('No data for County or incorrect structure');
+                                        onCountySelected(null);
+                                    }
+                                });
+                            } else {
+                                console.log('No marks selected');
+                                onCountySelected(null);
+                            }
+                            
                         } catch (error) {
                             console.error('Error fetching selected marks:', error);
                             onProvinceSelected(null);
