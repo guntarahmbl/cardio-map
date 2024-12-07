@@ -94,7 +94,7 @@ export default function TableauEmbed({ tableauVizUrl, onFiltersChange, onProvinc
                     // Add event listener for filter changes
                     viz.addEventListener('filterchanged', async () => {
                         try {
-                            const filters = await worksheet.getFiltersAsync();
+                            const filters = await worksheetProvince.getFiltersAsync();
                             const penyakitFilter = filters.find(filter => filter.fieldName === 'Penyakit');
                             console.log('Filters Changed:', filters);
 
@@ -115,7 +115,7 @@ export default function TableauEmbed({ tableauVizUrl, onFiltersChange, onProvinc
 
                     // Initial filter update
                     const updatePenyakitFilter = async () => {
-                        const filters = await worksheet.getFiltersAsync();
+                        const filters = await worksheetProvince.getFiltersAsync();
                         const penyakitFilter = filters.find(filter => filter.fieldName === 'Penyakit');
                         
                         if (penyakitFilter) {
